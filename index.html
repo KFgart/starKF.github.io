@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жалоба на нарушение</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://servermon.ru/cdn/attachment/2023/11/4092/_2.jpeg') no-repeat center center/cover;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 48px;
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Star Death KFgart</h1>
+    <div class="content">
+        <button onclick="sendEmail()">Отправить письмо</button>
+    </div>
+
+    <script>
+        function sendEmail() {
+            const subject = encodeURIComponent("незаконная деятельность, нарушение законодательства");
+            const body = encodeURIComponent(
+`Здравствуйте. Хочу пожаловаться на чат привязанный к каналу https://t.me/+5gZeMcUdJuYyN2My id 2025989086. В чате данного канала и в самом канале регулярно нарушаются правила телеграм и публикуются незаконные материалы и происходит незаконная деятельность. 
+
+привязанный чат id 2182208027 нарушает не только правила телеграм но и законодательство российской федерации как и их канал. 
+
+По вышесказанному просьба: 
+1: Провести проверку данного чата и канала. 
+2: Удалить незаконные материалы.
+3: Предотвратить распространение нелегального контента`
+            );
+            window.location.href = `mailto:abuse@telegram.org?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
